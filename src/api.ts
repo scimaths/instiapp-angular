@@ -55,4 +55,8 @@ export const API = {
     AchievementOffer: 'api/achievements-offer/{id}',
 
     external: 'api/external-blog{?from,num,query}',
+
+    buy:'api/buy{?from,num,query}'
+
+
 };

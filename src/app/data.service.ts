@@ -68,7 +68,7 @@ export class DataService {
     name: string,
     code: string
   }[];
-
+  private activeProducts!:any[]
   /** Show or hide QR code button */
   public showQRButton = false;
 
@@ -505,5 +505,14 @@ export class DataService {
         }, (error) => observer.error(error));
       }
     });
+    
   }
+  getActiveProducts(from:number,num:number):Observable<any>{
+    return this.FireGET(`api/buy?from=${from}&num=${num}`)
+  }
+  // createProduct(formdata:any){
+  //   this.FirePOST(`api/buy`, {'data':formdata}).subscribe(data=>{
+  //     console.log(data);
+  //   })
+  // }
 }

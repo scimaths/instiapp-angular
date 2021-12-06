@@ -25,6 +25,7 @@ export class FeedComponent implements OnInit {
 
   /** Initialize initial list wiht API call */
   ngOnInit() {
+
     /* If this is a child component */
     if (this.containers) {
       return;
