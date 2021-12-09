@@ -68,7 +68,7 @@ export class DataService {
     name: string,
     code: string
   }[];
-  private activeProducts!:any[]
+  // private activeProducts!:any[]
   /** Show or hide QR code button */
   public showQRButton = false;
 
