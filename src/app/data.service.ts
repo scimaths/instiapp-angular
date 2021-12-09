@@ -508,11 +508,25 @@ export class DataService {
     
   }
   getActiveProducts(from:number,num:number):Observable<any>{
-    return this.FireGET(`api/buy?from=${from}&num=${num}`)
+    return this.FireGET(`api/buy?from=${from}&num=${num}`);
   }
-  // createProduct(formdata:any){
-  //   this.FirePOST(`api/buy`, {'data':formdata}).subscribe(data=>{
-  //     console.log(data);
-  //   })
-  // }
+  createProduct(formdata:any){
+    return this.FirePOST(`api/buy`, formdata, {});
+  }
+  updateProduct(pk:string, formdata:any){
+    return this.FirePUT('api/buy/'+pk, formdata);
+  }
+  /*
+   this.dataService.getActiveProducts(0, 10).subscribe(data=>{
+       console.log(data)
+     })
+    let fdata = new FormData();
+    fdata.append('name', 'books');
+    fdata.append('image_urls', '["https://i.gadgets360cdn.com/large/rick_astley_youtube_1627540038486.jpg","https://i.gadgets360cdn.com/large/rick_astley_youtube_1627540038486.jpg"]');
+    fdata.append('description', 'To read');
+    fdata.append('price', '100');
+    this.dataService.createProduct(fdata).subscribe(data=>{
+      console.log(data)
+    })
+    */
 }
