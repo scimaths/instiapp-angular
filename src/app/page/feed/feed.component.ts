@@ -25,17 +25,7 @@ export class FeedComponent implements OnInit {
 
   /** Initialize initial list wiht API call */
   ngOnInit() {
-    /* If this is a child component */
-    let fdata = new FormData();
-    fdata.append('name', 'books');
-    fdata.append('image_urls', '["https://i.gadgets360cdn.com/large/rick_astley_youtube_1627540038486.jpg","https://i.gadgets360cdn.com/large/rick_astley_youtube_1627540038486.jpg"]');
-    fdata.append('description', 'To read stuff');
-    fdata.append('price', '100');
-
-    this.dataService.updateProduct('be2fbace-d3bc-445f-8551-1835a3d3b4e7', fdata).subscribe(data=>{
-      console.log(data)
-    })
-    
+    /* If this is a child component */    
     if (this.containers) {
       return;
     }

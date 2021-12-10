@@ -516,6 +516,12 @@ export class DataService {
   updateProduct(pk:string, formdata:any){
     return this.FirePUT('api/buy/'+pk, formdata);
   }
+  deleteProduct(pk:string){
+    return this.FireDELETE('api/buy/'+pk);
+  }
+  searchProducts(query:string, from:number, num:number){
+    return this.FireGET(`api/buy?query=${query}&from=${from}&num=${num}`);
+  }
   /*
    this.dataService.getActiveProducts(0, 10).subscribe(data=>{
        console.log(data)
